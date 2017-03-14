@@ -221,7 +221,7 @@ System.register('avatar4eg/share-social/components/ShareModal', ['flarum/app', '
                                         icon: 'weibo fa-lg fa-fw',
                                         children: app.translator.trans(parent.addPrefix(key + '_button')),
                                         onclick: function onclick() {
-                                            window.open('http://service.weibo.com/share/share.php?appKey=http://service.weibo.com/share/share.php?appKey=3063806388&title=' + share_title + ' : ' + share_description);
+                                            window.open('http://service.weibo.com/share/share.php?appKey=http://service.weibo.com/share/share.php?appKey=3063806388&title=' + share_title + ' ' + share_url);
                                         }
                                     }));
                                 case 'weixin':
