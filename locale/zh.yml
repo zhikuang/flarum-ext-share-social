@@ -2,7 +2,7 @@ avatar4eg-share-social:
     admin:
         settings:
             modal_title: 分享到社交网站的设置
-            socials_label: 社交网站按钮:
+            socials_label: "社交网站按钮:"
             facebook_label: => avatar4eg-share-social.ref.facebook
             vkontakte_label: => avatar4eg-share-social.ref.vkontakte
             twitter_label: => avatar4eg-share-social.ref.twitter
@@ -10,7 +10,7 @@ avatar4eg-share-social:
             odnoklassniki_label: => avatar4eg-share-social.ref.odnoklassniki
             my_mail_label: => avatar4eg-share-social.ref.my_mail
             linkedin_label: => avatar4eg-share-social.ref.linkedin
-            metatags_label: 元标签:
+            metatags_label: "元标签:"
             open_graph_label: Open Graph
             twitter_card_label: Twitter Cards
 
@@ -33,4 +33,4 @@ avatar4eg-share-social:
         odnoklassniki: Odnoklassniki
         my_mail: My World
         linkedin: LinkedIn
-        share: Share
+        share: 分享
