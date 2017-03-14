@@ -31,14 +31,14 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
                         this.settingsPrefix = 'avatar4eg.share-social';
                         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-                        this.checkboxesSocial = this.setting(this.addPrefix('settings', 'list')) ? JSON.parse(app.setting(this.addPrefix('settings', 'list'))) : [];
+                        this.checkboxesSocial = this.setting(this.addPrefix('settings', 'list')) ? JSON.parse(this.setting(this.addPrefix('settings', 'list'))) : [];
                         this.checkboxesMetatags = ['open_graph', 'twitter_card'];
 
                         this.checkboxesSocial.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.setting(_this2.addPrefix('settings', key)) === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(_this2.setting(_this2.addPrefix('settings', key)) === '1');
                         });
                         this.checkboxesMetatags.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.setting(_this2.addPrefix('settings', key)) === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(_this2.setting(_this2.addPrefix('settings', key)) === '1');
                         });
                     }
                 }, {
