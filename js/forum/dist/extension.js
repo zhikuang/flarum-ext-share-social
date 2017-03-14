@@ -225,14 +225,14 @@ System.register('avatar4eg/share-social/components/ShareModal', ['flarum/app', '
                                         }
                                     }));
                                 case 'weixin':
-                                    return m('li', { className: 'ShareItem' }, Button.component({
+                                    return m('li', { className: 'ShareItem' }, [Button.component({
                                         className: 'Button Button--rounded Share--' + key,
                                         icon: 'weixin fa-lg fa-fw',
                                         children: app.translator.trans(parent.addPrefix(key + '_button')),
                                         onclick: function onclick() {
-                                            alert('weixin');
+                                            alert('打开微信App，扫描下方二维码，在微信中打开链接进行分享');
                                         }
-                                    }));
+                                    }), m('img.weixin-qrcode[src=' + share_url + ']')]);
                                 default:
                                     return '';
                             }
