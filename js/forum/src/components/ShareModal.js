@@ -140,7 +140,7 @@ export default class ShareModal extends Modal {
                                                         alert('打开微信App，扫描下方二维码，在微信中打开链接进行分享');
                                                     }
                                                 }),
-                                                m('img.weixin-qrcode[src=' + share_url + ']')
+                                                m('img.weixin-qrcode[src=http://s.jiathis.com/qrcode.php?url=' + share_url + ']')
 
                                             ]
                                         )
