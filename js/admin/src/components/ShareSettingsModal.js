@@ -9,14 +9,14 @@ export default class ShareSettingsModal extends SettingsModal {
         this.settingsPrefix = 'avatar4eg.share-social';
         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(app.settings[this.addPrefix('settings', 'list')]) : [];
+        this.checkboxesSocial = this.setting(this.addPrefix('settings', 'list')) ? JSON.parse(app.setting(this.addPrefix('settings', 'list'))) : [];
         this.checkboxesMetatags = [
             'open_graph',
             'twitter_card'
         ];
 
-        this.checkboxesSocial.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.settings[this.addPrefix('settings', key)] === '1'));
-        this.checkboxesMetatags.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.settings[this.addPrefix('settings', key)] === '1'));
+        this.checkboxesSocial.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.setting(this.addPrefix('settings', key)) === '1'));
+        this.checkboxesMetatags.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.setting(this.addPrefix('settings', key)) === '1'));
     }
 
     className() {
@@ -35,9 +35,9 @@ export default class ShareSettingsModal extends SettingsModal {
                 m('label', {}, app.translator.trans(parent.addPrefix('locale', 'socials_label'))),
                 this.checkboxesSocial.map(function (key) {
                     return Switch.component({
-                        state       : parent.settings[parent.addPrefix('settings', key)]() || false,
+                        state       : parent.setting(parent.addPrefix('settings', key))() || false,
                         children    : app.translator.trans(parent.addPrefix('locale', key + '_label')),
-                        onchange    : parent.settings[parent.addPrefix('settings', key)]
+                        onchange    : parent.setting(parent.addPrefix('settings', key))
                     })
                 })
             ]) : '',
@@ -45,9 +45,9 @@ export default class ShareSettingsModal extends SettingsModal {
                 m('label', {}, app.translator.trans(parent.addPrefix('locale', 'metatags_label'))),
                 this.checkboxesMetatags.map(function (key) {
                     return Switch.component({
-                        state       : parent.settings[parent.addPrefix('settings', key)]() || false,
+                        state       : parent.setting(parent.addPrefix('settings', key))() || false,
                         children    : app.translator.trans(parent.addPrefix('locale', key + '_label')),
-                        onchange    : parent.settings[parent.addPrefix('settings', key)]
+                        onchange    : parent.setting(parent.addPrefix('settings', key))
                     })
                 })
             ])

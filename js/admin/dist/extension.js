@@ -18,7 +18,7 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
 
                 function ShareSettingsModal() {
                     babelHelpers.classCallCheck(this, ShareSettingsModal);
-                    return babelHelpers.possibleConstructorReturn(this, Object.getPrototypeOf(ShareSettingsModal).apply(this, arguments));
+                    return babelHelpers.possibleConstructorReturn(this, (ShareSettingsModal.__proto__ || Object.getPrototypeOf(ShareSettingsModal)).apply(this, arguments));
                 }
 
                 babelHelpers.createClass(ShareSettingsModal, [{
@@ -26,19 +26,19 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
                     value: function init() {
                         var _this2 = this;
 
-                        babelHelpers.get(Object.getPrototypeOf(ShareSettingsModal.prototype), 'init', this).call(this);
+                        babelHelpers.get(ShareSettingsModal.prototype.__proto__ || Object.getPrototypeOf(ShareSettingsModal.prototype), 'init', this).call(this);
 
                         this.settingsPrefix = 'avatar4eg.share-social';
                         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-                        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(app.settings[this.addPrefix('settings', 'list')]) : [];
+                        this.checkboxesSocial = this.setting(this.addPrefix('settings', 'list')) ? JSON.parse(app.setting(this.addPrefix('settings', 'list'))) : [];
                         this.checkboxesMetatags = ['open_graph', 'twitter_card'];
 
                         this.checkboxesSocial.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.settings[_this2.addPrefix('settings', key)] === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.setting(_this2.addPrefix('settings', key)) === '1');
                         });
                         this.checkboxesMetatags.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.settings[_this2.addPrefix('settings', key)] === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.setting(_this2.addPrefix('settings', key)) === '1');
                         });
                     }
                 }, {
@@ -58,15 +58,15 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
 
                         return [this.checkboxesSocial.length !== 0 ? m('div', { className: 'Form-group' }, [m('label', {}, app.translator.trans(parent.addPrefix('locale', 'socials_label'))), this.checkboxesSocial.map(function (key) {
                             return Switch.component({
-                                state: parent.settings[parent.addPrefix('settings', key)]() || false,
+                                state: parent.setting(parent.addPrefix('settings', key))() || false,
                                 children: app.translator.trans(parent.addPrefix('locale', key + '_label')),
-                                onchange: parent.settings[parent.addPrefix('settings', key)]
+                                onchange: parent.setting(parent.addPrefix('settings', key))
                             });
                         })]) : '', m('div', { className: 'Form-group' }, [m('label', {}, app.translator.trans(parent.addPrefix('locale', 'metatags_label'))), this.checkboxesMetatags.map(function (key) {
                             return Switch.component({
-                                state: parent.settings[parent.addPrefix('settings', key)]() || false,
+                                state: parent.setting(parent.addPrefix('settings', key))() || false,
                                 children: app.translator.trans(parent.addPrefix('locale', key + '_label')),
-                                onchange: parent.settings[parent.addPrefix('settings', key)]
+                                onchange: parent.setting(parent.addPrefix('settings', key))
                             });
                         })])];
                     }
