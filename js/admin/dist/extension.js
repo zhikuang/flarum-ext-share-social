@@ -31,7 +31,9 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
                         this.settingsPrefix = 'avatar4eg.share-social';
                         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-                        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(app.settings[this.addPrefix('settings', 'list')]) : [];
+                        var settingList = app.settings[this.addPrefix('settings', 'list')];
+                        console.log('settingList is ' + settingList);
+                        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(settingList) : [];
                         this.checkboxesMetatags = ['open_graph', 'twitter_card'];
 
                         this.checkboxesSocial.forEach(function (key) {
