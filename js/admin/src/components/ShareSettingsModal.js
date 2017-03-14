@@ -9,14 +9,14 @@ export default class ShareSettingsModal extends SettingsModal {
         this.settingsPrefix = 'avatar4eg.share-social';
         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-        this.checkboxesSocial = this.setting(this.addPrefix('settings', 'list')) ? JSON.parse(this.setting(this.addPrefix('settings', 'list'))) : [];
+        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(app.settings[this.addPrefix('settings', 'list')]) : [];
         this.checkboxesMetatags = [
             'open_graph',
             'twitter_card'
         ];
 
-        this.checkboxesSocial.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(this.setting(this.addPrefix('settings', key)) === '1'));
-        this.checkboxesMetatags.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(this.setting(this.addPrefix('settings', key)) === '1'));
+        this.checkboxesSocial.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.settings[this.addPrefix('settings', key)] === '1'));
+        this.checkboxesMetatags.forEach(key => this.settings[this.addPrefix('settings', key)] = m.prop(app.settings[this.addPrefix('settings', key)] === '1'));
     }
 
     className() {
