@@ -10,6 +10,8 @@ avatar4eg-share-social:
             odnoklassniki_label: => avatar4eg-share-social.ref.odnoklassniki
             my_mail_label: => avatar4eg-share-social.ref.my_mail
             linkedin_label: => avatar4eg-share-social.ref.linkedin
+            weibo_label: => avatar4eg-share-social.ref.weibo
+            weixin_label: => avatar4eg-share-social.ref.weixin
             metatags_label: Metatags:
             open_graph_label: Open Graph
             twitter_card_label: Twitter Cards
@@ -24,6 +26,8 @@ avatar4eg-share-social:
         odnoklassniki_button: => avatar4eg-share-social.ref.odnoklassniki
         my_mail_button: => avatar4eg-share-social.ref.my_mail
         linkedin_button: => avatar4eg-share-social.ref.linkedin
+        weibo_button: => avatar4eg-share-social.ref.weibo
+        weixin_button: => avatar4eg-share-social.ref.weixin
 
     ref:
         facebook: Facebook
@@ -33,4 +37,6 @@ avatar4eg-share-social:
         odnoklassniki: Odnoklassniki
         my_mail: My World
         linkedin: LinkedIn
+        weibo: Weibo
+        weixin: Wechat
         share: Share
