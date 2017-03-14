@@ -31,16 +31,16 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
                         this.settingsPrefix = 'avatar4eg.share-social';
                         this.localePrefix = 'avatar4eg-share-social.admin.settings';
 
-                        var settingList = app.settings[this.addPrefix('settings', 'list')];
+                        var settingList = app.data.settings[this.addPrefix('settings', 'list')];
                         console.log('settingList is ' + settingList);
-                        this.checkboxesSocial = app.settings[this.addPrefix('settings', 'list')] ? JSON.parse(settingList) : [];
+                        this.checkboxesSocial = app.data.settings[this.addPrefix('settings', 'list')] ? JSON.parse(settingList) : [];
                         this.checkboxesMetatags = ['open_graph', 'twitter_card'];
 
                         this.checkboxesSocial.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.settings[_this2.addPrefix('settings', key)] === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.data.settings[_this2.addPrefix('settings', key)] === '1');
                         });
                         this.checkboxesMetatags.forEach(function (key) {
-                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.settings[_this2.addPrefix('settings', key)] === '1');
+                            return _this2.settings[_this2.addPrefix('settings', key)] = m.prop(app.data.settings[_this2.addPrefix('settings', key)] === '1');
                         });
                     }
                 }, {
