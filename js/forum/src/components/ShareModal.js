@@ -129,6 +129,17 @@ export default class ShareModal extends Modal {
                                                 }
                                             })
                                         );
+                                    case 'weixin':
+                                        return m('li', {className: 'ShareItem'},
+                                            Button.component({
+                                                className: 'Button Button--rounded Share--' + key,
+                                                icon: 'weixin fa-lg fa-fw',
+                                                children: app.translator.trans(parent.addPrefix(key + '_button')),
+                                                onclick: () => {
+                                                    alert('weixin');
+                                                }
+                                            })
+                                        )
                                     default:
                                         return '';
                                 }

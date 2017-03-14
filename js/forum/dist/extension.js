@@ -224,6 +224,15 @@ System.register('avatar4eg/share-social/components/ShareModal', ['flarum/app', '
                                             window.open('http://service.weibo.com/share/share.php?appKey=http://service.weibo.com/share/share.php?appKey=3063806388&title=' + share_title + ' : ' + share_description);
                                         }
                                     }));
+                                case 'weixin':
+                                    return m('li', { className: 'ShareItem' }, Button.component({
+                                        className: 'Button Button--rounded Share--' + key,
+                                        icon: 'weixin fa-lg fa-fw',
+                                        children: app.translator.trans(parent.addPrefix(key + '_button')),
+                                        onclick: function onclick() {
+                                            alert('weixin');
+                                        }
+                                    }));
                                 default:
                                     return '';
                             }
