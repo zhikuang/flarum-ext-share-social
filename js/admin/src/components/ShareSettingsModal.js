@@ -66,7 +66,7 @@ export default class ShareSettingsModal extends SettingsModal {
                 value = value ? '1' : '0';
             }
 
-            if (value !== app.settings[key]) {
+            if (value !== app.data.settings[key]) {
                 dirty[key] = value;
             }
         });

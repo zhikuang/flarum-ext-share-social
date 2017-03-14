@@ -86,7 +86,7 @@ System.register('avatar4eg/share-social/components/ShareSettingsModal', ['flarum
                                 value = value ? '1' : '0';
                             }
 
-                            if (value !== app.settings[key]) {
+                            if (value !== app.data.settings[key]) {
                                 dirty[key] = value;
                             }
                         });
