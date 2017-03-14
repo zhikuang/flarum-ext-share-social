@@ -118,6 +118,17 @@ export default class ShareModal extends Modal {
                                                 }
                                             })
                                         );
+                                    case 'weibo':
+                                        return m('li', {className: 'ShareItem'},
+                                            Button.component({
+                                                className: 'Button Button--rounded Share--' + key,
+                                                icon: 'weibo fa-lg fa-fw',
+                                                children: app.translator.trans(parent.addPrefix(key + '_button')),
+                                                onclick: () => {
+                                                    window.open('http://service.weibo.com/share/share.php?appKey=http://service.weibo.com/share/share.php?appKey=3063806388&title=' + share_title  + ' : ' + share_description)
+                                                }
+                                            })
+                                        );
                                     default:
                                         return '';
                                 }
