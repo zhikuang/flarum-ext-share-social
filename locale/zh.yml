@@ -27,7 +27,7 @@ avatar4eg-share-social:
         my_mail_button: => avatar4eg-share-social.ref.my_mail
         linkedin_button: => avatar4eg-share-social.ref.linkedin
         weibo_button: => avatar4eg-share-social.ref.weibo
-        weixin_button: => "微信 扫描下方二维码"
+        weixin_button: "微信 扫描下方二维码"
 
     ref:
         facebook: Facebook
